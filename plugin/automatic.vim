@@ -33,39 +33,29 @@ else
    let b:vlog_ind = 4
 endif
 
-amenu &Verilog.&Header          :call AddHeader()<CR>
-amenu &Verilog.&Comment         :call AddComment()<CR>
-amenu &Verilog.-Automatic-      :
-amenu &Verilog.Auto&Argument    :call AutoArg()<CR>
-amenu &Verilog.Auto&Instance    :call AutoInst()<CR>
-amenu &Verilog.Auto&Define      :call AutoDef()<CR>
-amenu &Verilog.Auto&Sense       :call AutoSense()<CR>
-amenu &Verilog.Auto&Reg         :call AutoReg()<CR>
-amenu &Verilog.-QuickCheck-	:
-amenu &Verilog.Report\ No\ Loading/Driving\ nets :call AutoCheck()<CR>
-amenu &Verilog.-Kill-           :
-amenu &Verilog.&KillAuto        :call KillAuto()<CR>
-amenu &Verilog.KillAutoArg      :call KillAutoArg()<CR>
-amenu &Verilog.KillAutoInst     :call KillAutoInst()<CR>
-amenu &Verilog.KillAutoDef      :call KillAutoDef()<CR>
-amenu &Verilog.KillAutoSense    :call KillAutoSense()<CR>
-amenu &Verilog.KillAutoReg      :call KillAutoReg()<CR>
-amenu &Verilog.-Add\ Always\ Block-                              :
-amenu &Verilog.Always\ with\ posedge\ clock\ and\ posedge\ reset :call AddAlways("posedge", "posedge")<CR>
-amenu &Verilog.Always\ with\ posedge\ clock\ and\ negedge\ reset :call AddAlways("posedge", "negedge")<CR>
-amenu &Verilog.Always\ with\ negedge\ clock\ and\ posedge\ reset :call AddAlways("negedge", "posedge")<CR>
-amenu &Verilog.Always\ with\ negedge\ clock\ and\ negedge\ reset :call AddAlways("negedge", "negedge")<CR>
-amenu &Verilog.Always\ with\ posedge\ clock :call AddAlways("posedge", "")<CR>
-amenu &Verilog.Always\ with\ negedge\ clock :call AddAlways("negedge", "")<CR>
-amenu &Verilog.Combinational\ Always :call AddAlways("", "")<CR>
+command AddHeader		:call AddHeader()
+command AddComment   	:call AddComment()
+command AutoArg      	:call AutoArg()
+command AutoInst     	:call AutoInst()
+command AutoDef      	:call AutoDef()
+command AutoSense    	:call AutoSense()
+command AutoReg      	:call AutoReg()
+command AutoCheck    	:call AutoCheck()
+command KillAuto     	:call KillAuto()
+command KillAutoArg  	:call KillAutoArg()
+command KillAutoInst 	:call KillAutoInst()
+command KillAutoDef  	:call KillAutoDef()
+command KillAutoSense	:call KillAutoSense()
+command KillAutoReg  	:call KillAutoReg()
+
 
 command Alpp :call AddAlways("posedge", "posedge")
 command Alpn :call AddAlways("posedge", "negedge")
 command Alnp :call AddAlways("negedge", "posedge")
 command Alnn :call AddAlways("negedge", "negedge")
-command Alp :call AddAlways("posedge", "")
-command Aln :call AddAlways("negedge", "")
-command Al :call AddAlways("", "")
+command Alp	 :call AddAlways("posedge", "")
+command Aln	 :call AddAlways("negedge", "")
+command Al   :call AddAlways("", "")
 
 "===============================================================
 "        Add File Header
